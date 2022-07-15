@@ -29,13 +29,13 @@ public class Produto implements Serializable {
     @Column(name = "Nome", nullable = false, length = 50)
     private String nome;
 
-    @Column(name = "Preco", nullable = false, precision = 18, scale = 2)
+    @Column(name = "Preco", nullable = false, precision = 10, scale = 2)
     private BigDecimal preco;
 
     @CreationTimestamp
     @Column(name = "Validade", updatable = false, insertable = true, nullable = false)
-    @Convert(converter = Jsr310JpaConverters.LocalDateTimeConverter.class)
-    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
+    @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate validade;
 
     @Column(name = "Fabricante", nullable = false, length = 30)

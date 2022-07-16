@@ -32,8 +32,8 @@ public class Cliente implements Serializable {
     @Column(name = "CPF",nullable = false, length = 16)
     private String cpf;
 
-    @UpdateTimestamp
-    @Column(name = "DataNascimento", updatable = true, insertable = false, nullable = true)
+
+    @Column(name = "DataNascimento", nullable = true)
     @Convert(converter = Jsr310JpaConverters.LocalDateTimeConverter.class)
     @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     private LocalDateTime dataNascimento;

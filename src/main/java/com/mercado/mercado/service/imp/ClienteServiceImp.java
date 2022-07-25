@@ -2,18 +2,14 @@ package com.mercado.mercado.service.imp;
 
 import com.mercado.mercado.dto.ClienteRequestDto;
 import com.mercado.mercado.dto.ClienteResponseDto;
-import com.mercado.mercado.dto.ProdutoRequestDto;
-import com.mercado.mercado.dto.ProdutoResponseDto;
 import com.mercado.mercado.exception.ExceptionMessage;
 import com.mercado.mercado.model.Cliente;
-import com.mercado.mercado.model.Produto;
 import com.mercado.mercado.repository.ClienteRepository;
 import com.mercado.mercado.service.ClienteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

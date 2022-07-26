@@ -62,6 +62,7 @@ public class ProdutoServiceImp implements ProdutoService {
         }
     }
 
+    @Override
     public ProdutoResponseDto converteProdutoParaProdutoResponseDto(Produto produto) {
         try {
             return ProdutoResponseDto.builder()

@@ -7,14 +7,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+@Builder
 @Entity
 @Table(name = "Produto")
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,9 +35,9 @@ public class Produto implements Serializable {
 
     @CreationTimestamp
     @Column(name = "Validade", updatable = false, insertable = true, nullable = false)
-    @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
+    @Convert(converter = Jsr310JpaConverters.LocalDateTimeConverter.class)
     @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate validade;
+    private LocalDateTime validade;
 
     @Column(name = "Fabricante", nullable = false, length = 30)
     private String fabricante;

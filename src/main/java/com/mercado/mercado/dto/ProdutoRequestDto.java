@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 @Data
@@ -15,6 +16,6 @@ public class ProdutoRequestDto {
 
     private String nome;
     private BigDecimal preco;
-    private LocalDate validade;
+    private LocalDateTime validade;
     private String fabricante;
 }

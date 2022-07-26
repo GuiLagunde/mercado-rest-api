@@ -9,5 +9,4 @@ public interface ProdutoRepository extends PagingAndSortingRepository<Produto, L
 
         List<Produto> findAll();
 
-        Optional<Produto> findById(Long produtoId);
 }

@@ -5,8 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+
+import javax.persistence.Convert;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Builder
 @Data
@@ -18,7 +22,8 @@ public class ProdutoResponseDto {
     private String nome;
     private BigDecimal preco;
 
-    @JsonFormat(pattern="yyyy-MM-dd")
-    private LocalDate validade;
+    @Convert(converter = Jsr310JpaConverters.LocalDateTimeConverter.class)
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private LocalDateTime validade;
     private String fabricante;
 }
